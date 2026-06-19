@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad - Mi Control PKU</title>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 30px 20px;
+        line-height: 1.6;
+        color: #2c3e50;
+        background-color: #f4f7f6;
+    }
+    h1 {
+        color: #2ecc71;
+        border-bottom: 2px solid #2ecc71;
+        padding-bottom: 10px;
+    }
+    h2 {
+        color: #2c3e50;
+        margin-top: 30px;
+    }
+    .fecha {
+        color: #7f8c8d;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    .contacto-box {
+        background: #fff;
+        border-left: 5px solid #3498db;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    .aviso-box {
+        background: rgba(241,196,15,0.15);
+        border-left: 5px solid #f1c40f;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    .seguridad-box {
+        background: rgba(46,204,113,0.1);
+        border-left: 5px solid #2ecc71;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Política de Privacidad - Mi Control PKU</h1>
+<p class="fecha">Última actualización: junio de 2026</p>
+
+<p>"Mi Control PKU" ("la App") es una aplicación pensada para ayudar a pacientes con Fenilcetonuria (PKU) y a sus familias a registrar el consumo diario de fenilalanina. Esta política explica qué información maneja la App, dónde se almacena y cómo se protege.</p>
+
+<h2>1. Quién desarrolla la App</h2>
+<div class="contacto-box">
+    <strong>Desarrollador:</strong> Shikolope<br>
+    <strong>Correo de contacto:</strong> Diego.lopez017@outlook.com
+</div>
+
+<h2>2. Cuenta de usuario</h2>
+<p>Para usar la App es necesario crear una cuenta con:</p>
+<ul>
+    <li><strong>Correo electrónico</strong> y <strong>contraseña</strong>, usados únicamente para identificar tu sesión y proteger el acceso a tus datos.</li>
+    <li><strong>Nombre del paciente</strong>, usado para identificar de forma clara el registro dentro de la App, especialmente cuando más de un cuidador (por ejemplo, ambos padres) accede a la misma cuenta.</li>
+</ul>
+<p>La autenticación de cuentas es gestionada por <strong>Firebase Authentication</strong>, un servicio de Google. La App no tiene acceso directo a tu contraseña; esta es gestionada de forma segura por Google.</p>
+
+<h2>3. Información que la App almacena y dónde</h2>
+<p>Los datos que registras en la App se guardan en <strong>Cloud Firestore</strong>, la base de datos en la nube de Google Cloud / Firebase, en servidores ubicados en <strong>Santiago, Chile</strong> (región southamerica-west1). Esto incluye:</p>
+<ul>
+    <li>Registro diario de consumo de fenilalanina (FA), incluyendo nombre del alimento, cantidad y fecha.</li>
+    <li>Historial de días anteriores.</li>
+    <li>Citas médicas que ingreses.</li>
+    <li>Tu límite diario de FA configurado.</li>
+    <li>Nombre del paciente.</li>
+</ul>
+<p>Además, esta misma información se guarda de forma local en tu dispositivo (localStorage del navegador) para que la App funcione incluso sin conexión a internet, y se sincroniza automáticamente con la nube cuando hay conexión disponible.</p>
+
+<div class="seguridad-box">
+    <strong>🔒 Seguridad de tus datos:</strong> el acceso a la información guardada en Firestore está protegido por reglas de seguridad que permiten que <strong>únicamente el dueño autenticado de cada cuenta</strong> pueda leer o modificar sus propios datos. Ninguna otra persona o cuenta puede acceder a información de otra familia.
+</div>
+
+<h2>4. Acceso multi-dispositivo</h2>
+<p>Si compartes tu cuenta (correo y contraseña) con otro cuidador, ambos podrán ver y registrar información desde sus propios dispositivos, sincronizada en tiempo real. Esto está pensado para facilitar el cuidado compartido entre padres, madres o tutores de un mismo paciente. Es responsabilidad de la familia decidir con quién comparte el acceso a su cuenta.</p>
+
+<h2>5. Respaldo y exportación de datos</h2>
+<p>La App permite exportar tus datos a un archivo de respaldo (.json) y volver a importarlos, así como generar un reporte en formato PDF pensado para compartir con tu nutricionista o equipo médico. Estos archivos son generados y guardados por ti, en tu propio dispositivo, y es tu responsabilidad almacenarlos de forma segura. El desarrollador no tiene acceso a estos archivos una vez exportados.</p>
+
+<h2>6. Uso de la cámara y escáner de productos</h2>
+<p>La App incluye una función opcional de escaneo de códigos de barras mediante la cámara del dispositivo. Esta función:</p>
+<ul>
+    <li>Solicita permiso de acceso a la cámara únicamente cuando el usuario activa el escáner.</li>
+    <li>Utiliza la cámara solo para leer el código de barras del producto; no se capturan, almacenan ni envían fotografías o video.</li>
+    <li>Al detectar un código, la App envía ese código (un número) a la base de datos pública <strong>Open Food Facts</strong> (openfoodfacts.org), para obtener la información nutricional del producto.</li>
+</ul>
+<div class="aviso-box">
+    <strong>Sobre Open Food Facts:</strong> esta consulta se realiza directamente desde tu dispositivo hacia los servidores de Open Food Facts, un proyecto colaborativo independiente. La App no agrega información personal a esta consulta (solo el código del producto). El uso de esa información está sujeto a la propia política de privacidad de Open Food Facts.
+</div>
+
+<h2>7. Publicidad y rastreo</h2>
+<p>La App no contiene publicidad, no utiliza herramientas de seguimiento (analytics/tracking) ni comparte información con redes publicitarias. La única infraestructura externa utilizada es Firebase (Google), exclusivamente para autenticación y almacenamiento de los datos que tú mismo ingresas.</p>
+
+<h2>8. Menores de edad</h2>
+<p>La App puede ser utilizada por niños, niñas y adolescentes con PKU bajo supervisión de un adulto responsable (padre, madre, tutor o cuidador), quien es el titular de la cuenta y responsable de la información ingresada.</p>
+
+<h2>9. Eliminación de datos</h2>
+<p>Puedes solicitar la eliminación completa de tu cuenta y de todos los datos asociados almacenados en Firestore escribiendo a <strong>Diego.lopez017@outlook.com</strong>. También puedes eliminar la información almacenada localmente en tu dispositivo borrando los datos/caché de la aplicación desde la configuración de tu navegador o dispositivo, o desinstalando la App.</p>
+
+<h2>10. Cambios a esta política</h2>
+<p>Esta política puede actualizarse en el futuro, especialmente a medida que la App incorpore nuevas funciones. Cualquier cambio relevante será reflejado en esta misma página, indicando la fecha de la última actualización.</p>
+
+<h2>11. Contacto</h2>
+<p>Si tienes preguntas sobre esta política de privacidad, puedes escribir a:</p>
+<div class="contacto-box">
+    Diego.lopez017@outlook.com
+</div>
+
+<div class="aviso-box">
+    <strong>Nota importante:</strong> "Mi Control PKU" es una herramienta de apoyo familiar para el registro de consumo de fenilalanina, basada en la Tabla Oficial de Alimentos para Pacientes PKU del INTA Chile (2021). No reemplaza la indicación de tu médico o nutricionista. La función de "FA estimado" (tanto en el escáner de productos como en alimentos personalizados) es una aproximación general y no corresponde a valores oficiales de dicha tabla.
+</div>
+
+</body>
+</html>
